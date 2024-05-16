@@ -1,38 +1,366 @@
-.App {
-  text-align: center;
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #8EC5FC;
+    background-image: url(https://r4.wallpaperflare.com/wallpaper/510/823/801/colorful-red-blue-pink-wallpaper-144f4e1e2a5e3030ad6c11a281a5763f.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-size: center;
+
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+.todo-wrapper {
+    margin-top: 70px !important;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+::placeholder {
+    color: white;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+
+h1 {
+    color: #333;
 }
 
-.App-link {
-  color: #61dafb;
+.todo-input {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.todo-input-item label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.todo-input-item input {
+    font-size: 100%;
+    padding: 0.8em;
+    outline: none;
+    border: 2px solid rgb(255, 255, 255);
+    background-color: transparent;
+
+    border-radius: 20px;
+    width: 300px;
+}
+
+.todo-input-item :is(input:focus, input:valid)~label {
+    transform: translateY(-50%) scale(.9);
+    margin: 0em;
+    margin-left: 1.3em;
+    padding: 0.4em;
+    background-color: #e8e8e8;
+    border: #1d1160;
+
+}
+
+.todo-input-item :is(input:focus, input:valid) {
+    border-color: rgb(255, 255, 255);
+}
+
+
+
+.primaryBtn {
+    position: relative;
+    display: inline-block;
+    margin-top: 25px;
+    padding: 11px 29px;
+    text-align: center;
+    font-size: 18px;
+    letter-spacing: 1px;
+    text-decoration: none;
+    color: #ffffff;
+    background: transparent;
+    cursor: pointer;
+    transition: ease-out 0.5s;
+    border: 2px solid #ffffff;
+    border-radius: 20px;
+    box-shadow: inset 0 0 0 0 #800080;
+    cursor: pointer;
+}
+
+.primaryBtn:hover {
+    color: white;
+    box-shadow: inset 0 -100px 0 0 #1d1160;
+}
+
+.primaryBtn:active {
+    transform: scale(0.9);
+}
+
+.primaryBtn-update {
+    position: relative;
+    display: inline-block;
+    margin-top: -6px;
+    margin-left: 16px;
+    padding: 13px 16px;
+    text-align: center;
+    font-size: 18px;
+    letter-spacing: 1px;
+    text-decoration: none;
+    color: #ffffff;
+    background: transparent;
+    cursor: pointer;
+    transition: ease-out 0.5s;
+    border: 2px solid #ffffff;
+    border-radius: 20px;
+    box-shadow: inset 0 0 0 0 #800080;
+    cursor: pointer;
+}
+
+.primaryBtn-update:hover {
+    color: white;
+    box-shadow: inset 0 -100px 0 0 #1d1160;
+}
+
+.primaryBtn-update:active {
+    transform: scale(0.9);
+}
+
+.row {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.col-lg-3 {
+    flex: 0 0 25%;
+}
+
+.col-lg-9 {
+    flex: 0 0 75%;
+}
+
+.btn-area {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.secondary-btn {
+    position: relative;
+    display: inline-block;
+    margin: 1px;
+    padding: 5px 10px;
+    text-align: center;
+    font-size: 18px;
+    letter-spacing: 1px;
+    text-decoration: none;
+    color: #ffffff;
+    background: transparent;
+    cursor: pointer;
+    transition: ease-out 0.5s;
+    border: 2px solid #ffffff;
+    border-radius: 10px;
+    box-shadow: inset 0 0 0 0 #800080;
+    cursor: pointer;
+}
+
+.secondary-btn:hover {
+    color: white;
+    box-shadow: inset 0 -100px 0 0 #1d1160;
+}
+
+.secondary-btn:active {
+    transform: scale(0.9);
+}
+
+.secondary-btn-1 {
+    margin-right: 5px !important;
+    position: relative;
+    display: inline-block;
+    margin: 1px;
+    padding: 5px 10px;
+    text-align: center;
+    font-size: 18px;
+    letter-spacing: 1px;
+    text-decoration: none;
+    color: #ffffff;
+    background: transparent;
+    cursor: pointer;
+    transition: ease-out 0.5s;
+    border: 2px solid #ffffff;
+    border-radius: 10px;
+    box-shadow: inset 0 0 0 0 #800080;
+    cursor: pointer;
+}
+
+.secondary-btn-1:hover {
+    color: white;
+    box-shadow: inset 0 -100px 0 0 #1d1160;
+}
+
+.secondary-btn-1:active {
+    transform: scale(0.9);
+}
+
+
+
+
+.todo-list-item {
+    flex: 0 0 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    background: rgba(13, 110, 253, 0.25);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px solid #ffffff;
+    border-radius: 10px;
+    color: white;
+}
+
+
+
+
+.todo-list-item h2 {
+    margin-top: 2px;
+    margin-bottom: 15px;
+    color: #ffffff;
+}
+
+.todo-list-item p {
+    margin: 0;
+}
+
+.edit_wrapper {
+    flex: 0 0 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.edit_wrapper input,
+.edit_wrapper textarea {
+    width: 48%;
+    padding: 8px;
+    border: 1px solid #ffffff;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.icon-set1 :hover {
+    color: red;
+    margin-bottom: 5px !important;
+    cursor: pointer;
+
+}
+
+.icon-set2 :hover {
+    color: rgb(0, 255, 17);
+    margin-bottom: 5px !important;
+    cursor: pointer;
+
+}
+
+.icon-set3 :hover {
+    color: rgb(51, 0, 255);
+    margin-bottom: 5px !important;
+    cursor: pointer;
+
+}
+
+.update-input-first {
+    margin-right: 10px;
+    color: white;
+    font-size: 100% !important;
+    padding: 0.8em !important;
+    outline: none !important;
+    border: 2px solid rgb(255, 255, 255) !important;
+    background-color: transparent !important;
+    border-radius: 20px !important;
+    width: 300px !important;
+}
+
+
+.update-input-first label {
+    display: block !important;
+    margin-bottom: 5px !important;
+    font-weight: bold !important;
+    color: #ffffff !important;
+}
+
+.update-input-first input {
+    font-size: 100% !important;
+    padding: 0.8em !important;
+    outline: none !important;
+    border: 2px solid rgb(255, 255, 255) !important;
+    background-color: transparent !important;
+
+    border-radius: 20px !important;
+    width: 300px !important;
+}
+
+.update-input-first :is(input:focus, input:valid)~label {
+    transform: translateY(-50%) scale(.9) !important;
+    margin: 0em !important;
+    margin-left: 1.3em !important;
+    padding: 0.4em !important;
+    background-color: #e8e8e8 !important;
+    border: #1d1160 !important;
+
+}
+
+.update-input-first :is(input:focus, input:valid) {
+    border-color: rgb(255, 255, 255) !important;
+}
+
+
+
+.update-input-second {
+    color: white;
+    font-size: 100% !important;
+
+    outline: none !important;
+    border: 2px solid rgb(255, 255, 255) !important;
+    background-color: transparent !important;
+    border-radius: 20px !important;
+
+}
+
+
+.update-input-second label {
+    display: block !important;
+    margin-bottom: 5px !important;
+    font-weight: bold !important;
+    color: #ffffff !important;
+}
+
+.update-input-second input {
+    font-size: 100% !important;
+    padding: 0.8em !important;
+    outline: none !important;
+    border: 2px solid rgb(255, 255, 255) !important;
+    background-color: transparent !important;
+
+    border-radius: 20px !important;
+    width: 300px !important;
+}
+
+.update-input-second :is(input:focus, input:valid)~label {
+    transform: translateY(-50%) scale(.9) !important;
+    margin: 0em !important;
+    margin-left: 1.3em !important;
+    padding: 0.4em !important;
+    background-color: #e8e8e8 !important;
+    border: #1d1160 !important;
+
+}
+
+.update-input-second :is(input:focus, input:valid) {
+    border-color: rgb(255, 255, 255) !important;
 }
